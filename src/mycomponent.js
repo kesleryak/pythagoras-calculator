@@ -33,6 +33,24 @@ function MyComponent() {
             }
 
         }}>Calculate</button>
+        <p>You can also type in the lengths of the sides ofthe triangle below.</p>
+        <input type='number' id='length1' placeholder='length1'></input>
+        <input type='number' id='length2' placeholder='length2'></input>
+        <input type='number' id='length3' placeholder='length3'></input>
+        <button type='button' id='Calculate' onClick={() => {
+            let pyt = [0, 0, 0];
+            pyt[0] = (document.getElementById('length1').value**2);
+            pyt[1] = (document.getElementById('length2').value**2);
+            pyt[2] = (document.getElementById('length3').value**2);
+            pyt.sort(function(a, b){return a - b});
+            if (pyt[0]+pyt[1] == pyt[2]) {
+                alert("Yes");
+            }
+            else {
+                alert("No");
+            }
+
+        }}>Calculate</button>
     </div>
   );
 }
