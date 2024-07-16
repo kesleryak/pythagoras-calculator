@@ -33,7 +33,7 @@ function MyComponent() {
             }
 
         }}>Calculate</button>
-        <p>You can also type in the lengths of the sides ofthe triangle below.</p>
+        <p>You can also type in the lengths of the sides of the triangle below.</p>
         <input type='number' id='length1' placeholder='length1'></input>
         <input type='number' id='length2' placeholder='length2'></input>
         <input type='number' id='length3' placeholder='length3'></input>
