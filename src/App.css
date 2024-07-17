@@ -20,7 +20,7 @@ input, button {
     display: block;
     margin: auto;
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 10px;
 }
 button {
@@ -30,4 +30,7 @@ button {
 }
 body {
     background-color: rgb(236, 208, 190);
+}
+table {
+    margin: auto;
 }
