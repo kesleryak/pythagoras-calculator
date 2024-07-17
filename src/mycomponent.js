@@ -60,6 +60,19 @@ function MyComponent() {
             }
 
         }}>Calculate</button>
+        <p>Type in the length and the width below and the website will return you the hypotunese of the triangle.</p>
+        <table>
+            <tr>
+                <td><input type='number' id='height' placeholder='height'></input></td>
+                <td><input type='number' id='width' placeholder='width'></input></td>
+            </tr>
+            
+        </table>
+        <button type='button' id='Calculate' onClick={() => {
+            let height = document.getElementById('height').value**2;
+            let width = document.getElementById('width').value**2;
+            alert(Math.sqrt(height+width))
+        }}>Calculate</button>
     </div>
   );
 }
