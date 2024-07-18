@@ -38,6 +38,7 @@ function MyComponent() {
             }
 
         }}>Calculate</button>
+
         <p>You can also type in the lengths of the sides of the triangle below.</p>
         <table>
             <tr>
@@ -48,11 +49,13 @@ function MyComponent() {
         </table>
         <button type='button' id='Calculate' onClick={() => {
             let pyt = [0, 0, 0];
-            pyt[0] = (document.getElementById('length1').value**2);
-            pyt[1] = (document.getElementById('length2').value**2);
-            pyt[2] = (document.getElementById('length3').value**2);
+            pyt[0] = (document.getElementById('length1').value);
+            pyt[1] = (document.getElementById('length2').value);
+            pyt[2] = (document.getElementById('length3').value);
             pyt.sort(function(a, b){return a - b});
-            if (pyt[0]+pyt[1] == pyt[2]) {
+            if (pyt[0] < 0 || pyt[1] < 0 || pyt[2] < 0) {
+                alert("Are you crazy? Go to a mental hospital immediately.")
+            } else if (pyt[0]**2+pyt[1]**2 == pyt[2]**2) {
                 alert("Yes");
             }
             else {
@@ -60,7 +63,8 @@ function MyComponent() {
             }
 
         }}>Calculate</button>
-        <p>Type in the length and the width below and the website will return you the hypotunese of the triangle.</p>
+
+        <p>Type in the length and the width of the triangle below and the website will return you the hypotunese.</p>
         <table>
             <tr>
                 <td><input type='number' id='height' placeholder='height'></input></td>
@@ -69,9 +73,33 @@ function MyComponent() {
             
         </table>
         <button type='button' id='Calculate' onClick={() => {
-            let height = document.getElementById('height').value**2;
-            let width = document.getElementById('width').value**2;
-            alert(Math.sqrt(height+width))
+            let height = document.getElementById('height').value;
+            let width = document.getElementById('width').value;
+            if (height < 0 || width < 0) {
+                alert("Are you crazy? Go to a mental hospital immediately.")
+            } else {
+                alert(Math.sqrt(height**2+width**2))
+            }
+        }}>Calculate</button>
+
+        <p>Also, you can type in the hypotunese and any other length below and it will return you the other length.</p>
+        <table>
+            <tr>
+                <td><input type='number' id='hypotunese' placeholder='hypotunese'></input></td>
+                <td><input type='number' id='side' placeholder='length of side'></input></td>
+            </tr>
+            
+        </table>
+        <button type='button' id='Calculate' onClick={() => {
+            let hypotunese = document.getElementById('hypotunese').value;
+            let side = document.getElementById('side').value;
+            if (hypotunese < side) {
+                alert("The length of the hypotunese cannot be less than the side.")
+            } else if (hypotunese < 0 || side < 0) {
+                alert("Are you crazy? Go to a mental hospital immediately.")
+            } else {
+                alert(Math.sqrt(hypotunese**2-side**2))
+            }
         }}>Calculate</button>
     </div>
   );
